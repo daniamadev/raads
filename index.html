@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O RAADS–R Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>O RAADS–R</h1>
+        <p class="description">Por favor, leia cada afirmação abaixo e escolha a resposta que melhor se adapta às suas experiências durante interações sociais.</p>
+
+        <div id="quiz-content">
+            <!-- O conteúdo do quiz será renderizado aqui pelo JavaScript -->
+        </div>
+
+        <!-- Caixa de mensagem de erro (oculta por padrão) -->
+        <div id="message-box-overlay" class="message-box-overlay" style="display: none;">
+            <div class="message-box">
+                <h3 id="message-box-title"></h3>
+                <p id="message-box-text"></p>
+                <button id="message-box-close">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script do jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="./quiz.js"></script>
+    <script src="./script.js"></script>
+    <script src="./export-pdf.js"></script>
+</body>
+</html>
