@@ -81,7 +81,7 @@ function exportToPdf() {
             
             const questionText = `${index + 1}. ${question.question}`;
             const questionHeight = addText(questionText, margin, y, styles.question);
-            y += questionHeight + 10;
+            y += questionHeight + 2; //era 10, agora 2 para espaçamento reduzido
 
             // Opções de resposta
             question.options.forEach((option, optIndex) => {
@@ -94,7 +94,7 @@ function exportToPdf() {
                         ...styles.header,
                         size: 16
                     });
-                    y = 40;
+                    y = 10; //era 40, agora 10 para começar mais alto
                 }
 
                 const isSelected = userAnswers[index] === optIndex;
@@ -119,7 +119,7 @@ function exportToPdf() {
                 y += optionHeight + 2; // Espaçamento reduzido
             });
 
-            y += 5; // Espaço entre perguntas
+            y += 15; // Espaço entre perguntas, era 5 mudei para 10
         });
 
         // Rodapé
