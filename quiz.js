@@ -44,7 +44,7 @@
                     "Verdade apenas quando eu tinha menos de 16 anos",
                     "Nunca é verdade"
                 ]
-            },/*
+            },
             {
                 question: "Eu consigo me colocar no lugar das outras pessoas.",
                 options: [
@@ -136,7 +136,7 @@
                 ]
             },
             {
-                question: "Já me disseram que sou desajeitado ou descoordinado.",
+                question: "Já me disseram que sou desajeitado ou descoordenado.",
                 options: [
                     "Verdade agora e quando eu era jovem",
                     "Verdade só agora",
@@ -719,5 +719,5 @@
                     "Verdade apenas quando eu tinha menos de 16 anos",
                     "Nunca é verdade"
                 ]
-            }*/
+            }
         ];
