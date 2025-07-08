@@ -5,9 +5,9 @@ function exportToPdf() {
 
         // Configurações do documento
         const doc = new jsPDF();
-        let y = 30;
+        let y = 15;
         const pageWidth = doc.internal.pageSize.getWidth();
-        const margin = 20;
+        const margin = 10;
         const maxWidth = pageWidth - 2 * margin;
 
         // Cores do tema (baseadas no seu HTML)
@@ -74,10 +74,10 @@ function exportToPdf() {
 
             // Container da pergunta (estilo igual ao HTML)
             doc.setFillColor(...colors.lightBg);
-            doc.roundedRect(margin - 5, y - 8, maxWidth + 10, 20, 3, 3, 'F');
+            //doc.roundedRect(margin - 5, y - 8, maxWidth + 10, 20, 3, 3, 'F');
             doc.setDrawColor(...colors.primary);
             doc.setLineWidth(0.5);
-            doc.line(margin - 5, y - 8, margin - 5, y + 12); // Borda lateral esquerda
+            doc.line(margin - 5, y - 8, margin - 5, y + 4); // Borda lateral esquerda
             
             const questionText = `${index + 1}. ${question.question}`;
             const questionHeight = addText(questionText, margin, y, styles.question);
@@ -102,11 +102,11 @@ function exportToPdf() {
                 // Destaque para resposta selecionada (rosa claro)
                 if (isSelected) {
                     doc.setFillColor(...colors.selectedBg);
-                    doc.roundedRect(margin - 3, y - 3, maxWidth + 6, 15, 2, 2, 'F');
+                    //doc.roundedRect(margin - 3, y - 3, maxWidth + 6, 15, 2, 2, 'F');
                 }
                 
                 // Usamos • para selecionado e ◦ para não selecionado (caracteres mais confiáveis)
-                const bullet = isSelected ? "•" : "◦";
+                const bullet = isSelected ? "x" : "o";
                 const optionText = ` ${bullet} ${option}`;
                 
                 const optionHeight = addText(
@@ -116,10 +116,10 @@ function exportToPdf() {
                     isSelected ? styles.selectedOption : styles.option
                 );
                 
-                y += optionHeight + 8; // Espaçamento reduzido
+                y += optionHeight + 2; // Espaçamento reduzido
             });
 
-            y += 8; // Espaço entre perguntas
+            y += 5; // Espaço entre perguntas
         });
 
         // Rodapé
